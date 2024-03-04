@@ -5,23 +5,13 @@ var db      = low(adapter);
 
 // init the data store
 // ---------------------------
-db.defaults({posts: []}).write()
+db.defaults({posts: []}).write();
 
 // add post
 // ----------------------------
 
+ console.log(db.get('posts').value());
 
-  db.get('posts')
-  .push({ id: 2, title: 'great', published: true})
-  .write()
-
-  db.get('posts')
-  .push({ id: 3, title: 'new own', published: true})
-  .write()
-
-  db.get('posts')
-  .push({ id: 4, title: 'random', published: true})
-  .write()
 // count posts
 // ----------------------------
 // YOUR CODE
