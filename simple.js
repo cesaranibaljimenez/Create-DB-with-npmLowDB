@@ -30,17 +30,17 @@ db.defaults({posts: []}).write();
 
 // count posts
 // ----------------------------
-const postCount = db.get('posts').size().value();
-console.log(`Número de publicaciones: ${postCount}`);
+//const postCount = db.get('posts').size().value();
+//console.log(`Número de publicaciones: ${postCount}`);
 
 // find all posts ids
 // ----------------------------
-// YOUR CODE
+//console.log("IDs de todos los posts:", db.get('posts').map('id').value());
 
 // all matches of published false
 // ----------------------------
-// YOUR CODE
-
+var unPublishedPost = db.get('posts').filter({published : false}).value(); 
+console.log("Post no publicados:", unPublishedPost);
 // find post with published false
 // ----------------------------
 // YOUR CODE
