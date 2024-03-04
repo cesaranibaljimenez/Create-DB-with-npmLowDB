@@ -10,11 +10,28 @@ db.defaults({posts: []}).write();
 // add post
 // ----------------------------
 
- console.log(db.get('posts').value());
+//db.get (´posts')
+  //.push({id:1, title: 'lowdb is awesome', published: true})
+  //.write()
+
+  //db.get (´posts')
+  //.push({id:2, title: 'great', published: true})
+  //.write()
+
+  //db.get (´posts')
+  //.push({id:1, title: 'new own', published: true})
+  //.write()
+
+  //db.get (´posts')
+  //.push({id:1, title: 'random', published: true})
+  //.write()
+
+ //console.log(db.get('posts').value());
 
 // count posts
 // ----------------------------
-// YOUR CODE
+const postCount = db.get('posts').size().value();
+console.log(`Número de publicaciones: ${postCount}`);
 
 // find all posts ids
 // ----------------------------
