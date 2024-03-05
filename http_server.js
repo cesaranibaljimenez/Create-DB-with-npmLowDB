@@ -66,14 +66,18 @@ app.get('/posts/:title/:id/:published', function(req, res) {
 // ----------------------------------------------------
     app.get('/delete/:id', function(req, res) {
     const { id } = req.params;
-    db.get('posts').remove({ id: parseInt(id) }).write();
-    res.send(`Post with id ${id} deleted successfully.`);
+    // Eliminar post con ID nulo o no númerico
+    if(isNaN(id)){
+        db.get('posts').remove({id: null}).write();
+        res.send(`Post with id ${id} deleted successfully.`);
+    }else{
+        db.get('posts').remove({ id: parseInt(id) }).write();
+        res.send(`Post with id ${id} deleted successfully.`);
+    }
+    
 });
 
-// Eliminar posts con IDs de texto
-db.get('posts')
-  .remove(post => typeof post.id === 'string')
-  .write();
+
 
 
 

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/superagent/3.8.3/superagent.min.js"></script>
+
+<body>
+
+    <main role="main" class="container" style="margin-top:20px">
+
+        <h1>Delete Post</h1>
+        <form id="deleteForm">
+            <label for="postId">Post ID (deja en blanco para eliminar todos los IDs nulos):</label>
+            <input type="text" id="postid" name="postid">
+            <button type="submit">Delete Post</button>    
+        </form>
+       
+    </main>
+
+</body>
+<script>
+
+    document.getElementById('deleteForm').addEventListener('submit', function(event){
+        event.preventDefault();
+        // Obetener el valor del ID del formulario
+        var postId = document.getElementById('postid').value;
+        //Contrurir la URL de la solicitud DELTE
+        var url = `/delete/${postId}`
+        // Realiza la solicitud utilizando SuperAgent
+    superagent
+        .get(url)
+        .end(function(err,res){
+            if(err){
+                console.log(err);
+            }
+            else{
+                console.log(res);
+                
+            }
+        });
+    
+});
+
+</script>
+</html>
