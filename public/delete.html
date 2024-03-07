@@ -11,7 +11,8 @@
         <form id="deleteForm">
             <label for="postId">Post ID :</label>
             <input type="text" id="postid" name="postid">
-            <button type="submit">Delete Post</button>    
+            <button type="button" class="btn btn-danger" id="deleteButton">Delete Post</button>
+  
         </form>
        
     </main>
@@ -19,7 +20,7 @@
 </body>
 <script>
 
-    document.getElementById('deleteForm').addEventListener('submit', function(event){
+    document.getElementById('deleteButton').addEventListener('click', function(event){
         event.preventDefault();
         // Obetener el valor del ID del formulario
         var postId = document.getElementById('postid').value;

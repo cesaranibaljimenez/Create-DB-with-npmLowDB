@@ -16,7 +16,7 @@
                 <option value="true">True</option>
                 <option value="false">False</option>
             </select>
-            <button type="submit">Update Status</button>    
+            <button type="button" class="btn btn-primary" id="updateButton">Update Status</button>    
         </form>
        
     </main>
@@ -24,7 +24,7 @@
 </body>
 <script>
 
-    document.getElementById('updateForm').addEventListener('submit', function(event){
+    document.getElementById('updateButton').addEventListener('click', function(event){
         event.preventDefault();
         // Obetener el valor del ID del formulario
         var postId = document.getElementById('postid').value;
